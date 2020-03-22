@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Socket App</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+        }
+
+        #bt {
+            background-color: black;
+            border: none;
+            color: white;
+            padding: 10px 22px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        #form {
+            text-align: center;
+        }
+        #m {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-right: 40px;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+    $(function () {
+        var socket = io();
+        $('form').submit(function (e) {
+            e.preventDefault();
+            socket.emit('MSSV', $('#m').val());
+            $('#m').val('');
+            return false;
+        });
+        socket.on('MSSV', function (msg) {
+            if (msg==0) alert("Không tìm thấy sinh viên");
+            else{
+            $('#mytable tbody:last-child').append($('<tr>'));
+            $('#mytable tbody:last-child').append($('<td>').text(msg.name));
+            $('#mytable tbody:last-child').append($('<td>').text(msg.MSSV));
+            $('#mytable tbody:last-child').append($('<td>').text(msg.classs));
+            $('#mytable tbody:last-child').append($('<td>').text(msg.phone));
+            $('#mytable tbody:last-child').append($('<td>').text(msg.email));
+            $('#mytable tbody:last-child').append($('<td>').text(msg.address));
+            $('#mytable tbody:last-child').append($('</tr>'));
+        }});
+    });
+</script>
+
+<body>
+
+    <div id="form">
+        <form action="">
+            <h2>Nhập mã số sinh viên vào đây:</h2> 
+            <input type="text" id="m" name="MSSV" placeholder="1702xxxx" ><br>      
+            <button id="bt" type="submit" value="Submit">Tìm kiếm</button>
+        </form>
+    </div>
+
+    <hr>
+
+    <div>
+        <table id="mytable">
+            <tr>
+                <th>Họ tên</th>
+                <th>Mã số sinh viên</th>
+                <th>Lớp</th>
+                <th>Điện thoại</th>
+                <th>Email</th>
+                <th>Địa chỉ</th>
+            </tr>
+        </table>
+        
+</body>
+
+</html>
