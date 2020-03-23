@@ -1,59 +1,98 @@
 function SV(name,MSSV,classs,phone,email,address) {
-    this.name=name;
-    this.MSSV=MSSV;
-    this.classs=classs;
-    this.phone=phone;
-    this.email=email;
-    this.address=address
+  this.name=name;
+  this.MSSV=MSSV;
+  this.classs=classs;
+  this.phone=phone;
+  this.email=email;
+  this.address=address
 }
 
 var list = [
-    new SV(
-    "Vu Quoc Khanh",
-    "17021275", 
-    "K62CACLC2", 
-    "0832886616",
-    "quockhanhtnvn@gmail.com", 
-    'Thai Nguyen'
-    ),
-    new SV({
-      name: "https://cdn.tgdd.vn/Products/Images/42/190321/iphone-xs-max-gold-600x600.jpg",
-      MSSV: "Iphone XS Max",
-      class: "iPhone XR Max International - Productform : RankA - Backed up to 12 months warranty with a premium package",
-      phone: 1099,
-      email: "InStock",
-      address: "iphone",
-    }),
-    new SV({
-      name: "https://cdn1.viettelstore.vn/images/Product/ProductImage/medium/50823174.jpeg",
-      MSSV: "iPhone XS",
-      class: "iPhone XS International - Productform : RankA - Backed up to 12 months warranty with a premium package",
-      phone:
-        999,
-      email: "InStock",
-      address: "iphone",
-    }),
-    new SV({
-      name: "https://didongviet.vn/pub/media/catalog/product//i/p/iphone-11-64gb-2-sim.jpg",
-      MSSV: "iphone 11",
-      class: "iPhone 11 International - Productform : RankA - Backed up to 12 months warranty with a premium package",
-      phone: 709,
-      email: "InStock",
-      address: "iphone",
-    }),
-    new SV({
-      name: "https://cdn.tgdd.vn/Products/Images/42/191276/samsung-galaxy-note-10-silver-400x460.png",
-      MSSV: "Samsung Galaxy Note 10+",
-      class: "Mainboard 12 months.Power, touchscreen and 3-month camera.30-day test case",
-      phone: 949,
-      email: "InStock",
-      address: "android",
-    })
+  new SV(
+  "Vu Quoc Khanh",
+  "17021275", 
+  "K62CACLC2", 
+  "0832886616",
+  "quockhanhtnvn@gmail.com", 
+  'Thai Nguyen'
+  ),
+  new SV(
+  "Vu Trong Duong",
+  "17021229",
+  "K62CACLC2",
+  "0945752146",
+  "venom181999@gmail.com",
+  "Ha Noi",
+  ),
+  new SV(
+  "Nguyễn Việt Hoàng",
+  "1702157",
+  "K62CACLC2",
+  "0912654879",
+  "viethoang@gmail.com",
+  "Ha Noi",
+  ),
+  new SV(
+  "Nguyen Minh Duong",
+  "17021227",
+  "K62CACLC2",
+  "0863092567",
+  "DoubleW@gmail.com",
+  "Bac Giang",
+  ),
+  new SV(
+  "Pham Tuan Hiep",
+  "17021242",
+  "K62CACLC2",
+"0982586868",
+  "HiepPham@gmail.com",
+  "Hai Duong",
+  ),
+new SV(
+  "Nguyen Manh Hung",
+  "17021259",
+  "K62CACLC2",
+"0958764153",
+  "hungmanh@gmail.com",
+  "Vinh Phuc",
+  ),
+new SV(
+  "Nguyen Duc Lam",
+  "17021280",
+  "K62CACLC2",
+"09312846975",
+  "NguyenLam@gmail.com",
+  "Hai Phong",
+  ),
+new SV(
+  "Le Khanh Toan",
+  "17021345",
+  "K62CACLC1",
+"0912633233",
+  "Lekhanhtoan@gmail.com",
+  "Ha Noi",
+  ),
+new SV(
+  "Nguyen Phuong Hang",
+  "17021240",
+  "K62CACLC2",
+"0395049961",
+  "nguyenphuonghang@gmail.com",
+  "Hai Duong",
+  ),
+new SV(
+  "Nguyen Tuan Duy",
+  "17021225",
+  "K62CACLC3",
+"0912081988",
+  "tuanduy@gmail.com",
+  "Ha Noi",
+  )
 ];
 
 exports.Findsinhvien = function (id) {
-    for (var i=0; i < list.length; i++) {
-        if (list[i].MSSV ==id) return list[i];
-    }
-    return 0;
+  for (var i=0; i < list.length; i++) {
+      if (list[i].MSSV ==id) return list[i];
+  }
+  return 0;
 };
